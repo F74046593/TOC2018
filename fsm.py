@@ -25,11 +25,6 @@ class TocMachine(GraphMachine):
             text = event['message']['text']
             return text.lower() == '3'
         return False
-    def is_going_to_state4(self, event):
-        if event.get("message") and event['message'].get("text"):
-            text = event['message']['text']
-            return text.lower() == '4'
-        return False
 
 
 
@@ -62,13 +57,3 @@ class TocMachine(GraphMachine):
 
     def on_exit_state3(self):
         print('Leaving state3')
-    
-    def on_enter_state4(self, event):
-        print("I'm entering state4")
-
-        sender_id = event['sender']['id']
-        responese = send_text_message(sender_id, "I'm entering state4")
-        self.go_back()
-
-    def on_exit_state4(self):
-        print('Leaving state4')
