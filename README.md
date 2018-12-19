@@ -13,7 +13,4 @@
 		
 	* Input: "3"
 		* Reply: "I'm entering state3"
-		
-	* Input: "4"
-		* Reply: "I'm entering state4"
 
